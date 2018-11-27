@@ -7,3 +7,4 @@ the you gave when created. Open the client on a computer that you want to remote
 to see the screen everytime you desire.
 I am not responsible for the use that you will do with this program, i made it just for fun.
 In the light cosmos rat folder you'll find the source code.
+Official website: https://lightcosmosrat.wordpress.com/
