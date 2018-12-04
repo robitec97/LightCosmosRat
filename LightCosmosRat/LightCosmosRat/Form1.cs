@@ -121,6 +121,14 @@ namespace LightCosmosRat
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                IPAddress.Parse(textBox2.Text);
+            }catch(FormatException fe)
+            {
+                MessageBox.Show(fe.Message);
+                return;
+            }
             string myCodePrototype = Properties.Resources.RatCode;
             sb = new StringBuilder(myCodePrototype);
             sb.Replace("STD_PORT", textBox1.Text);

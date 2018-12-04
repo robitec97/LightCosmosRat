@@ -61,7 +61,7 @@ namespace LightCosmosRat
 		}
 		void Button3Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("This software was develop by Robitec97","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+			MessageBox.Show("This software was developed by Robitec97 ","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
 		}
 		void Button2Click(object sender, EventArgs e)
 		{
