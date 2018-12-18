@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Threading;
+using System.Text;
+using System.Net.Sockets;
 namespace LightCosmosRat
 {
 	/// <summary>
@@ -19,18 +21,48 @@ namespace LightCosmosRat
 	/// 
 	public partial class MainForm : Form
 	{
-		bool ClientMakerStarted;
+        Form1 f1;
+        Form2 f2;
+        TcpClient connectionChecker;
 		void StatusHandler(Object tbt){
 			TextBox tb = (TextBox)tbt;
-			while(true){
-				Thread.Sleep(3000);
-				if(ClientMakerStarted){
-					tb.Text = "Client maker running...";
-				}
-				else{
-					tb.Text = "Ready...";
-				}
-			}
+            StringBuilder sb = new StringBuilder();
+            while (true)
+            {
+                Thread.Sleep(3000);
+                if(f1 != null && f1.Visible)
+                {
+                    tb.Text = "Client maker running...";
+                }
+                else if(f2 != null && f2.Visible)
+                {
+                    tb.Text = "Listening panel running...";
+                }
+                else
+                {
+                    sb.Clear();
+                    sb.Append("Ready...");
+                    sb.AppendLine();
+                    sb.Append(DateTime.Now.ToLocalTime());
+                    tb.Text = sb.ToString();
+                    //check if the host the machine is connected to inter by visiting the official website
+                    try
+                    {
+                        connectionChecker = new TcpClient();
+                        connectionChecker.Connect("www.lightcosmosrat.wordpress.com", 80);
+                        sb.AppendLine();
+                        sb.AppendLine("Network connected");
+                        connectionChecker.Close();
+                        tb.Text = sb.ToString();
+                    }catch(Exception ex)
+                    {
+                        sb.AppendLine();
+                        sb.AppendLine("Network Error");
+                        tb.Text = sb.ToString();
+                    }
+                }
+            }
+
 		}
 		Thread t;
 		public MainForm()
@@ -44,11 +76,11 @@ namespace LightCosmosRat
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 			CheckForIllegalCrossThreadCalls = false;
-			ClientMakerStarted = false;
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-			new Form1().Show();
+            f1 = new Form1();
+            f1.Show();
 		}
 		void MainFormLoad(object sender, EventArgs e)
 		{
@@ -65,7 +97,8 @@ namespace LightCosmosRat
 		}
 		void Button2Click(object sender, EventArgs e)
 		{
-			new Form2().Show();
+            f2 = new Form2();
+            f2.Show();
 		}
 	}
 }
