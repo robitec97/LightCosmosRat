@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle ("LightCosmosRat")]
-[assembly: AssemblyDescription ("")]
+[assembly: AssemblyDescription("C# remote administration tool from the cosmos.")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany("https:\\www.lightcosmosrat.wordpress.com")]
 [assembly: AssemblyProduct ("LightCosmosRat")]
 [assembly: AssemblyCopyright ("Robitec97")]
 [assembly: AssemblyTrademark ("")]
@@ -24,4 +24,6 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can use the default the Revision and 
 // Build Numbers by using the '*' as shown below:
-[assembly: AssemblyVersion ("1.0.*")]
+[assembly: AssemblyVersion("1.0.1")]
+[assembly: AssemblyFileVersion("1.0.1")]
+
