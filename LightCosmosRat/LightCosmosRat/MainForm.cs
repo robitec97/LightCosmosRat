@@ -44,7 +44,6 @@ namespace LightCosmosRat
                     sb.Append("Ready...");
                     sb.AppendLine();
                     sb.Append(DateTime.Now.ToLocalTime());
-                    tb.Text = sb.ToString();
                     //check if the host the machine is connected to inter by visiting the official website
                     try
                     {
@@ -52,6 +51,10 @@ namespace LightCosmosRat
                         connectionChecker.Connect("www.lightcosmosrat.wordpress.com", 80);
                         sb.AppendLine();
                         sb.AppendLine("Network connected");
+                        string Ep = connectionChecker.Client.LocalEndPoint.ToString();
+                        string[] IpInfo = Ep.Split(':');
+                        sb.AppendLine();
+                        sb.Append("Your local IP: "+ IpInfo[0]);
                         connectionChecker.Close();
                         tb.Text = sb.ToString();
                     }catch(Exception ex)
