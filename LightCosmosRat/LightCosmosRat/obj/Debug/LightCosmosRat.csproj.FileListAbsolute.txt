@@ -9,4 +9,3 @@ C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosm
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.csproj.CoreCompileInputs.cache
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.exe
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.pdb
-C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.csprojAssemblyReference.cache
