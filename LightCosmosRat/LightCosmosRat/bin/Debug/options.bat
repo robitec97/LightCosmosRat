@@ -1,1 +1,0 @@
-copy ClientRat_cs.exe %AppData%\bin.exe
