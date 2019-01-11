@@ -1,1 +1,0 @@
-%AppData%\bin.exe
