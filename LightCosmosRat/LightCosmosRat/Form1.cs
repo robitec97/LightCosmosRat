@@ -133,6 +133,7 @@ namespace LightCosmosRat
             sb = new StringBuilder(myCodePrototype);
             sb.Replace("STD_PORT", textBox1.Text);
             sb.Replace("STD_IP", textBox2.Text);
+            sb.Replace("STD_NAME", textBox3.Text);
             string myCode = sb.ToString();
             File.WriteAllText("ClientRat.cs", myCode);
             bool CompilerResults = CompileExecutable("ClientRat.cs",textBox3);
