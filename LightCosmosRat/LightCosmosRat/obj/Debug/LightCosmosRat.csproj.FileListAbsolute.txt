@@ -1,7 +1,6 @@
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\bin\Debug\LightCosmosRat.exe.config
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\bin\Debug\LightCosmosRat.exe
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\bin\Debug\LightCosmosRat.pdb
-C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.csprojAssemblyReference.cache
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.Form1.resources
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.Form2.resources
 C:\Users\robit\OneDrive\Documenti\SharpDevelop Projects\LightCosmosRat\LightCosmosRat\obj\Debug\LightCosmosRat.MainForm.resources
