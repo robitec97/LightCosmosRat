@@ -1,4 +1,4 @@
-# LightCosmosRat
+# LightCosmosRat [![Build Status](https://travis-ci.org/robitec97/LightCosmosRat.svg?branch=master)](https://travis-ci.org/robitec97/LightCosmosRat)
 Light Cosmos Rat is a RAT(Remote Administration Tool) for Windows developed in C#. It needs .Net Framework and/or Mono to be executed.
 The program consist of two sections:
 - The Listening section
