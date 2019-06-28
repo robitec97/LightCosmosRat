@@ -1,2 +1,2 @@
 language: csharp
-solution: LightCosmosRat.sln
+solution: LightCosmosRat/LightCosmosRat.sln
