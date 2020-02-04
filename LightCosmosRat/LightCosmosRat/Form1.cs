@@ -74,6 +74,7 @@ namespace LightCosmosRat
                 cp.ReferencedAssemblies.Add("System.dll");
                 cp.ReferencedAssemblies.Add("System.Drawing.Dll");
                 cp.ReferencedAssemblies.Add("System.Windows.Forms.Dll");
+                cp.ReferencedAssemblies.Add("System.Runtime.InteropServices.Dll");
                 cp.CompilerOptions = "/t:winexe";
                 cp.GenerateExecutable = true;
 
