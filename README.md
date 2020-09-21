@@ -9,4 +9,6 @@ in the client during its creation, after connection is established you will see 
 
 2. The Create Client section allows you to create a Client, you can choose the name of the .exe file that you'll generate. The ip and the port that the client will connect to. After the client runs for the first time on a machine, it copies itself in the startup folder and then tries forever to establish a connection with the server(the listening panel running on the other computer), after the connection is established, the client will send desktop images forever, unless the connection is interrupted or lost, in this case it will try to re-establish the connection as soon as possibile.
 
-# you can find project solution inside the LightCosmosRat folder or you can donwload the latest precompiled stable version on the root of the repository, the file simply called LightCosmosRat.exe
+
+Precompiled version:
+<a id="raw-url" href="https://raw.githubusercontent.com/robitec97/LightCosmosRat/master/LightCosmosRat.exe">Download latest stable release</a>
