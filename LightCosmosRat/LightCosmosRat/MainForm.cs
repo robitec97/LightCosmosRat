@@ -21,8 +21,8 @@ namespace LightCosmosRat
 	/// 
 	public partial class MainForm : Form
 	{
-        Form1 f1;
-        Form2 f2;
+        ClientMaker f1;
+        ListeningPanel f2;
         TcpClient connectionChecker;
 		void StatusHandler(Object tbt){
 			TextBox tb = (TextBox)tbt;
@@ -96,7 +96,7 @@ namespace LightCosmosRat
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-            f1 = new Form1();
+            f1 = new ClientMaker();
             f1.Show();
 		}
 		void MainFormLoad(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace LightCosmosRat
 		}
 		void Button2Click(object sender, EventArgs e)
 		{
-            f2 = new Form2();
+            f2 = new ListeningPanel();
             f2.Show();
 		}
 	}
