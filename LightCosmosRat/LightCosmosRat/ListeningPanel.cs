@@ -94,7 +94,8 @@ namespace LightCosmosRat
                 imageServer.Stop();
             }catch(Exception al)
             {
-               //MessageBox.Show(al.Message);
+				//MessageBox.Show(al.Message);
+				
             }
             try
             {
